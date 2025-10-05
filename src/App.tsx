@@ -106,13 +106,13 @@ function App() {
                     ⚙️
                   </span>
                   <span
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                    style={{ marginLeft: "5px", cursor: "pointer" }}
                     onClick={() => handleUpdateTodo(todo.id, "completed")}
                   >
                     ✅
                   </span>
                   <span
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                    style={{ marginLeft: "5px", cursor: "pointer" }}
                     onClick={() => handleDeleteTodo(todo.id, todo.task)}
                   >
                     ❌
@@ -130,7 +130,8 @@ function App() {
             <div key={todo.id} className="todo-item working">
               <p
                 style={{
-                  display: "flex",
+                  display: "grid",
+                  gridTemplateColumns: "1fr auto",
                   justifyContent: "space-between",
                   alignItems: "center",
                 }}
@@ -144,13 +145,13 @@ function App() {
                     🕓
                   </span>
                   <span
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                    style={{ marginLeft: "5px", cursor: "pointer" }}
                     onClick={() => handleUpdateTodo(todo.id, "completed")}
                   >
                     ✅
                   </span>
                   <span
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                    style={{ marginLeft: "5px", cursor: "pointer" }}
                     onClick={() => handleDeleteTodo(todo.id, todo.task)}
                   >
                     ❌
@@ -168,7 +169,8 @@ function App() {
             <div key={todo.id} className="todo-item completed">
               <p
                 style={{
-                  display: "flex",
+                  display: "grid",
+                  gridTemplateColumns: "1fr auto",
                   justifyContent: "space-between",
                   alignItems: "center",
                 }}
@@ -182,13 +184,13 @@ function App() {
                     🕓
                   </span>
                   <span
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                    style={{ marginLeft: "5px", cursor: "pointer" }}
                     onClick={() => handleUpdateTodo(todo.id, "working")}
                   >
                     ⚙️
                   </span>
                   <span
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                    style={{ marginLeft: "5px", cursor: "pointer" }}
                     onClick={() => handleDeleteTodo(todo.id, todo.task)}
                   >
                     ❌

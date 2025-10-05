@@ -1,0 +1,266 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #111111;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.todo-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.todo-column {
+  background: #3b3a3a;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.todo-column:hover {
+  transform: translateY(-5px);
+}
+
+.todo-column h2 {
+  margin-bottom: 10px;
+  background: #007bff;
+  color: rgb(10, 10, 10);
+  border-radius: 6px;
+  padding: 8px 0;
+}
+
+.todo-item {
+  background: #f1f2f6;
+  border-radius: 6px;
+  margin: 8px 0;
+  padding: 1px 15px;
+  text-align: left;
+}
+
+.todo-item:hover {
+  background: #dcdde1;
+}
+
+.todo-item.completed {
+  background: #63b476;
+}
+
+.todo-item.pending {
+  background: #b19c5a;
+}
+
+.todo-item.working {
+  background: #4473a5;
+}
+
+p{
+    color: rgb(253, 252, 252);
+}
+
+.add-todo {
+  display: flex;
+  gap: 10px; /* space between input and button */
+  margin: 20px auto;
+  width: 60%;
+}
+
+.add-todo input {
+  flex: 1; /* take remaining space */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.add-todo input:focus {
+  border-color: #007bff; /* blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.add-todo button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff; /* blue button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-todo button:hover {
+  background-color: #0056b3; /* darker blue on hover */
+  transform: scale(1.05);
+}
+
+.add-todo button:active {
+  transform: scale(0.95);
+}
+
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.modal-container {
+  background-color: #524e4e;
+  padding:1rem 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Modal heading */
+.modal-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Modal todo text */
+.modal-container p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Buttons container */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Cancel button */
+.cancel-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color:black;
+}
+
+/* Remove button */
+.remove-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button hover effects */
+.cancel-btn:hover {
+  background-color: #b3b3b3;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b;
+}
+
+
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+   .title{
+    font-size: 2rem;
+  }
+.todo-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns on tablet */
+  gap: 15px;
+  justify-content: center; /* center grid items */
+  width: 100%; /* take full width to allow centering */
+  max-width: 1000px; /* optional: limit max width */
+  margin: 0 auto; /* center the container */
+  }
+
+  .add-todo {
+    width: 80%; /* slightly wider on tablet */
+  }
+
+  .todo-column h2 {
+    font-size: 1.2rem;
+  }
+
+  .add-todo input, .add-todo button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .comlpetedColumn{
+    margin-left:50%;
+    width: 100%;
+  }
+}
+
+/* Mobile devices (up to 767px) */
+@media screen and (max-width: 767px) {
+  .title{
+    font-size: 1.5rem;
+  }
+  .todo-container {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 10px;
+  }
+   .comlpetedColumn{
+    margin-left:  0%;
+    width: 90%;
+  }
+
+  .add-todo {
+    width: 98%;
+    margin-left: 1%;
+  }
+
+ .add-todo button {
+  }
+
+  .todo-column h2 {
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+
+  .todo-item {
+    padding: 8px 10px;
+  }
+
+  .modal-container {
+    width: 90%;
+    padding: 1rem 1.5rem;
+  }
+
+  .modal-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-container p {
+    font-size: 0.9rem;
+  }
+
+  .modal-buttons button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
